@@ -3,146 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adeola Deborah Adewale | Customer Service & Cybersecurity Professional</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Adeola Deborah Adewale | Professional Portfolio</title>
+    <style>
+        /* Simple inline styles to ensure it works immediately */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #EEF2FF;
+            color: #1F2937;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #1F2937;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #6366F1;
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+        }
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(99,102,241,0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            color: #6366F1;
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #8B5CF6;
+            margin-bottom: 1rem;
+        }
+        .hero-description {
+            color: #6B7280;
+            margin-bottom: 2rem;
+        }
+        .btn-primary, .btn-secondary {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            color: white;
+        }
+        .btn-secondary {
+            border: 2px solid #6366F1;
+            color: #6366F1;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .stat h3 {
+            font-size: 1.5rem;
+            color: #6366F1;
+        }
+        .hero-image {
+            position: relative;
+        }
+        .image-wrapper {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .circle-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+        .profile-icon {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+        .profile-icon i {
+            font-size: 150px;
+            color: white;
+        }
+        section {
+            padding: 5rem 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .underline {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            margin: 0 auto;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #6366F1;
+        }
+        .category-header i {
+            font-size: 1.5rem;
+            color: #6366F1;
+        }
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+        .skill-item span {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .skill-bar {
+            height: 8px;
+            background: #E5E7EB;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #6366F1, #8B5CF6);
+            border-radius: 4px;
+        }
+        .education-grid, .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .edu-card, .cert-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .edu-card i, .cert-card i {
+            font-size: 2rem;
+            color: #6366F1;
+            margin-bottom: 1rem;
+        }
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+        }
+        .contact-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+        }
+        .footer {
+            background: #1F2937;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        .burger {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .nav-links {
+                display: none;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .image-wrapper {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
                 <a href="#home">ADA</a>
             </div>
             <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-star-of-life"></i>
-                    <span>9+ Years of Excellence</span>
+                    <i class="fas fa-star-of-life"></i> 9+ Years of Excellence
                 </div>
                 <h1 class="hero-title">
                     Adeola Deborah<br>
                     <span class="highlight">Adewale</span>
                 </h1>
-                <p class="hero-subtitle">Customer Service Professional | Cybersecurity Enthusiast | Travel Expert</p>
+                <p class="hero-subtitle">Customer Service Professional | Cybersecurity Enthusiast</p>
                 <p class="hero-description">
-                    Results-driven professional with 9+ years of experience in customer support, travel consulting, and luxury client management. 
-                    Passionate about cybersecurity and protecting digital assets while delivering exceptional client experiences.
+                    Results-driven professional with 9+ years of experience in customer support, travel consulting, and luxury client management.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">
-                        <i class="fas fa-paper-plane"></i> Hire Me
-                    </a>
-                    <a href="#skills" class="btn-secondary">
-                        <i class="fas fa-shield-alt"></i> View Skills
-                    </a>
+                    <a href="#contact" class="btn-primary">Hire Me</a>
+                    <a href="#skills" class="btn-secondary">View Skills</a>
                 </div>
                 <div class="hero-stats">
-                    <div class="stat">
-                        <h3>9+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat">
-                        <h3>1000+</h3>
-                        <p>Clients Served</p>
-                    </div>
-                    <div class="stat">
-                        <h3>100%</h3>
-                        <p>Client Satisfaction</p>
-                    </div>
+                    <div class="stat"><h3>9+</h3><p>Years Experience</p></div>
+                    <div class="stat"><h3>1000+</h3><p>Clients Served</p></div>
+                    <div class="stat"><h3>100%</h3><p>Satisfaction</p></div>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="image-wrapper">
                     <div class="circle-bg"></div>
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2;">
-                        <i class="fas fa-user-circle" style="font-size: 180px; color: white; opacity: 0.9;"></i>
+                    <div class="profile-icon">
+                        <i class="fas fa-user-circle"></i>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hero-wave">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
-        </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
                 <h2>About Me</h2>
                 <div class="underline"></div>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead">Client-focused professional with 9+ years of experience across customer support, travel consulting, and luxury client management, now expanding expertise into cybersecurity.</p>
-                    <p>I began my career in 2014 as a Client Support Intern at Aerospace Travels & Tours, building foundational skills in customer service and ticketing. Over the past 9 years, I've grown into a trusted professional known for managing high-value clients, resolving complex enquiries with discretion, and delivering seamless service experiences.</p>
-                    <p>I'm currently pursuing my B.Sc. in Computer Science at the University of Jos (2018-2024), combining my extensive practical experience with academic knowledge. My technical expertise includes CRM systems, GDS platforms (Amadeus, Sabre, Galileo), and a strong understanding of cybersecurity principles.</p>
-                    
-                    <div class="about-quote">
-                        <i class="fas fa-quote-left"></i>
-                        <p>"Delivering excellence with integrity and security awareness. 9+ years of creating seamless experiences while protecting what matters most."</p>
-                    </div>
-                    
-                    <div class="about-info">
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Nigeria | Open to Remote & Hybrid Roles</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>dabbiz11@gmail.com</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+234 802 422 0494 | +234 810 460 4766</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-highlights">
-                    <div class="highlight-card">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h3>9+ Years</h3>
-                        <p>Professional Experience</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>B.Sc. Computer Science</h3>
-                        <p>University of Jos (2018-2024)</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-plane"></i>
-                        <h3>Diploma in Air Ticketing</h3>
-                        <p>International School of Aviation (2012-2014)</p>
-                    </div>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="margin-bottom: 1rem;">Client-focused professional with 9+ years of experience across customer support, travel consulting, and luxury client management.</p>
+                <p style="margin-bottom: 1rem;">I began my career in 2014 at Aerospace Travels & Tours, building foundational skills in customer service. Now I'm pursuing B.Sc. Computer Science at University of Jos (2018-2024), combining experience with academic knowledge.</p>
+                <div style="margin-top: 2rem;">
+                    <div><i class="fas fa-envelope"></i> dabbiz11@gmail.com</div>
+                    <div><i class="fas fa-phone"></i> +234 802 422 0494 | +234 810 460 4766</div>
+                    <div><i class="fas fa-map-marker-alt"></i> Nigeria | Open to Remote</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header">
@@ -151,45 +368,27 @@
             </div>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-headset"></i>
-                        <h3>Customer Service</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><span>Client Support</span><div class="skill-bar"><div class="skill-progress" style="width: 98%"></div></div></div>
-                        <div class="skill-item"><span>Issue Resolution</span><div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div></div>
-                        <div class="skill-item"><span>Client Management</span><div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div></div>
-                    </div>
+                    <div class="category-header"><i class="fas fa-headset"></i><h3>Customer Service</h3></div>
+                    <div class="skill-item"><span>Client Support</span><div class="skill-bar"><div class="skill-progress" style="width: 98%"></div></div></div>
+                    <div class="skill-item"><span>Issue Resolution</span><div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div></div>
+                    <div class="skill-item"><span>Client Management</span><div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div></div>
                 </div>
-                
                 <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-plane"></i>
-                        <h3>Travel Systems</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><span>Amadeus GDS</span><div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div></div>
-                        <div class="skill-item"><span>Sabre GDS</span><div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div></div>
-                        <div class="skill-item"><span>Galileo GDS</span><div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div></div>
-                    </div>
+                    <div class="category-header"><i class="fas fa-plane"></i><h3>Travel Systems</h3></div>
+                    <div class="skill-item"><span>Amadeus GDS</span><div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div></div>
+                    <div class="skill-item"><span>Sabre GDS</span><div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div></div>
+                    <div class="skill-item"><span>Galileo GDS</span><div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div></div>
                 </div>
-                
                 <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Cybersecurity</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item"><span>Network Security</span><div class="skill-bar"><div class="skill-progress" style="width: 78%"></div></div></div>
-                        <div class="skill-item"><span>Data Protection</span><div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div></div>
-                        <div class="skill-item"><span>Security Awareness</span><div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div></div>
-                    </div>
+                    <div class="category-header"><i class="fas fa-shield-alt"></i><h3>Cybersecurity</h3></div>
+                    <div class="skill-item"><span>Network Security</span><div class="skill-bar"><div class="skill-progress" style="width: 78%"></div></div></div>
+                    <div class="skill-item"><span>Data Protection</span><div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div></div>
+                    <div class="skill-item"><span>Security Awareness</span><div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
             <div class="section-header">
@@ -198,13 +397,13 @@
             </div>
             <div class="education-grid">
                 <div class="edu-card">
-                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <i class="fas fa-graduation-cap"></i>
                     <h3>B.Sc. Computer Science</h3>
                     <h4>University of Jos</h4>
                     <p>2018 - 2024</p>
                 </div>
                 <div class="edu-card">
-                    <div class="edu-icon"><i class="fas fa-plane"></i></div>
+                    <i class="fas fa-plane"></i>
                     <h3>Diploma in Air Ticketing</h3>
                     <h4>International School of Aviation</h4>
                     <p>2012 - 2014</p>
@@ -213,34 +412,6 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
-        <div class="container">
-            <div class="section-header">
-                <h2>Certifications</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="certs-grid">
-                <div class="cert-card">
-                    <i class="fab fa-cisco"></i>
-                    <h3>Cisco</h3>
-                    <p>IT Essentials & IoT</p>
-                </div>
-                <div class="cert-card">
-                    <i class="fab fa-linkedin"></i>
-                    <h3>LinkedIn Learning</h3>
-                    <p>Customer Service, Soft Skills</p>
-                </div>
-                <div class="cert-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>NITDA</h3>
-                    <p>Cybersecurity Awareness</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
@@ -266,7 +437,6 @@
                     <input type="text" placeholder="Subject">
                     <textarea rows="5" placeholder="Your Message" required></textarea>
                     <button type="submit" class="btn-primary">Send Message</button>
-                    <div id="formMessage"></div>
                 </form>
             </div>
         </div>
@@ -274,18 +444,32 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Adeola Deborah Adewale</h3>
-                    <p>Customer Service Professional | Cybersecurity Enthusiast</p>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2024 Adeola Deborah Adewale. All rights reserved.</p>
-                </div>
-            </div>
+            <p>&copy; 2024 Adeola Deborah Adewale. All rights reserved.</p>
+            <p>Customer Service Professional | Cybersecurity Enthusiast</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Contact form
+        const form = document.getElementById('contactForm');
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                form.reset();
+            });
+        }
+    </script>
 </body>
 </html>
